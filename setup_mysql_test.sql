@@ -7,7 +7,8 @@
 -- If the database hbnb_test_db or the user hbnb_test already exists, your script should not fail
 CREATE DATABASE IF NOT EXISTS hbnb_test_db;
 USE hbnb_test_db;
-CREATE USER IF NOT EXISTS 'hbnb_test'@'localhost' IDENTIFIED BY 'hbnb_test_pwd';
+CREATE USER IF NOT EXISTS 'hbnb_test'@'localhost';
+SET PASSWORD FOR 'hbnb_dev'@'localhost' = 'hbnb_dev_pwd';
 GRANT ALL PRIVILEGES ON hbnb_test_db.* TO 'hbnb_test'@'localhost';
 GRANT SELECT PRIVILEGES ON performance_schema.* TO 'hbnb_test'@'localhost';
 FLUSH PRIVILEGES;
