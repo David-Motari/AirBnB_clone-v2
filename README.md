@@ -1,3 +1,21 @@
+<h1 align="center">AirBnB_clone-v2</h1>
+<p align="center">An AirBnB clone.</p>
+
+## Description :house:
+
+The AirBnB clone is a complete RESTful web application, integrating file and
+database (MySQL) storage in a back-end API with front-end interfacing in a
+clone of AirBnB. The front-end is designed using HTML5/CSS3 and is served using
+Python Flask. The application is configured on a distributed system - two web
+servers and one load balancer - with Nginx and HAProxy.
+
+HolbertonBnB is still in active development, with complete functionality set to
+deploy in the coming month:
+
+* Complete integration of a RESTful API
+* Full configuration of website with domain name
+* Serving of dynamic content using JavaScript
+
 <center> <h1>HBNB - The Console</h1> </center>
 
 This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
@@ -23,17 +41,15 @@ This repository contains the initial stage of a student project to build a clone
 <br>
 <center> <h2>General Use</h2> </center>
 
-1. First clone this repository.
-
-3. Once the repository is cloned locate the "console.py" file and run it as follows:
+1. Locate the "console.py" file and run it as follows:
 ```
 /AirBnB_clone$ ./console.py
 ```
-4. When this command is run the following prompt should appear:
+2. When this command is run the following prompt should appear:
 ```
 (hbnb)
 ```
-5. This prompt designates you are in the "HBnB" console. There are a variety of commands available within the console program.
+3. This prompt designates you are in the "HBnB" console. There are a variety of commands available within the console program.
 
 ##### Commands
     * create - Creates an instance based on given class
@@ -140,3 +156,4 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 (hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'name': 'Fred the Frog', 'age': 9, 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
 ```
 <br>
+
