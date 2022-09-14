@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-# This is the state class
+"""This is the state class"""
 import models
 from models import *
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship, backref
 from os import getenv
 
