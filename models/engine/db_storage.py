@@ -22,6 +22,7 @@ classes = {"Amenity": Amenity, "City": City,
 
 class DBStorage:
     """interaacts with the MySQL database"""
+
     __engine = None
     __session = None
 
@@ -36,7 +37,7 @@ class DBStorage:
                                       format(HBNB_MYSQL_USER,
                                              HBNB_MYSQL_PWD,
                                              HBNB_MYSQL_HOST,
-                                             HBNB_MYSQL_DB)
+                                             HBNB_MYSQL_DB),
                                       pool_pre_ping=True)
         if HBNB_ENV == "test":
             Base.metadata.drop_all(self.__engine)
