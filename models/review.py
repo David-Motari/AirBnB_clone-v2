@@ -3,11 +3,12 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey, Integer, Float, Table
 from sqlalchemy.orm import relationship
-from os import environ
+from os import getenv
 from uuid import uuid4
 
-s = "HBNB_TYPE_STORAGE"
-if s in environ.keys() and environ["HBNB_TYPE_STORAGE"] == "db":
+
+s = getenv("HBNB_TYPE_STORAGE")
+if s == "db":
     class Review(BaseModel, Base):
         """This is the class for Review
         Attributes:

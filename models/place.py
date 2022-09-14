@@ -3,9 +3,8 @@
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, ForeignKey, Integer, Float, Table
 from sqlalchemy.orm import relationship
-from os import environ
+from os import getenv
 from uuid import uuid4
-
 
 place_amenity = Table(
     'place_amenity',
@@ -20,8 +19,10 @@ place_amenity = Table(
         String(60),
         ForeignKey('amenities.id'),
         nullable=False))
-s = "HBNB_TYPE_STORAGE"
-if s in environ.keys() and environ["HBNB_TYPE_STORAGE"] == "db":
+
+
+s = getenv("HBNB_TYPE_STORAGE")
+if s == "db":
     class Place(BaseModel, Base):
         """This is the class for Place
         Attributes:
