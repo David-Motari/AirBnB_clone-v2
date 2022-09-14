@@ -13,6 +13,7 @@ import json
  classes = {'BaseModel': BaseModel, 'User': User, 'Place': Place,
             'State': State, 'City': City, 'Amenity': Amenity,'Review': Review}  
 
+
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
     __file_path = 'file.json'
