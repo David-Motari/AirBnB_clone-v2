@@ -15,7 +15,6 @@ classes = {'BaseModel': BaseModel, 'User': User, 'Place': Place,
 
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
-
     __file_path = "file.json"
     __objects = {}
 
@@ -55,6 +54,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
+        """Deletes obj if not None"""
         if obj is not None:
             obj_to_del = f"{type(obj).__name__}.{obj.id}"
             objcts = self.all(obj.__class__.__name__)
