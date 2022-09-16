@@ -4,19 +4,16 @@ from models.base_model import Base, BaseModel
 from models.__init__ import storage
 from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship, backref
-import os
+from os import getenv
 
-SELECTED_STORAGE = os.environ.get("HBNB_TYPE_STORAGE")
+
+SELECTED_STORAGE = getenv("HBNB_TYPE_STORAGE")
 if SELECTED_STORAGE == "db":
     class State(BaseModel, Base):
         __tablename__ = "states"
         name = Column(String(128), nullable=False)
         cities = relationship(
             "City", backref="state", cascade="all, delete, delete-orphan")
-
-       # def __init__(self, *args, **kwargs):
-           # super().__init__(*args, **kwargs)
-
 else:
     name = ""
     @property
