@@ -51,10 +51,10 @@ if SELECTED_STORAGE == 'db':
         amenities = relationship("Amenity",
                                  secondary="place_amenity", viewonly=False)
 
-        def __init__(self, **kwargs):
-            setattr(self, "id", str(uuid4()))
-            for k, v in kwargs.items():
-                setattr(self, k, v)
+       # def __init__(self, **kwargs):
+           # setattr(self, "id", str(uuid4()))
+           # for k, v in kwargs.items():
+               # setattr(self, k, v)
 else:
     class Place(BaseModel):
         """This is the class for Place

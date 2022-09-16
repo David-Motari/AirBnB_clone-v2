@@ -9,7 +9,6 @@ from uuid import uuid4
 
 SELECTED_STORAGE = environ.get("HBNB_TYPE_STORAGE")
 if SELECTED_STORAGE == "db":
-
     class Review(BaseModel, Base):
         """This is the class for Review
         Attributes:
@@ -17,19 +16,16 @@ if SELECTED_STORAGE == "db":
         user_id: user id
         text: review description
         """
-
         __tablename__ = "reviews"
         text = Column(String(1024), nullable=False)
         place_id = Column(String(60), ForeignKey("places.id"), nullable=False)
         user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
 
-        def __init__(self, **kwargs):
-            setattr(self, "id", str(uuid4()))
-            for i, j in kwargs.items():
-                setattr(self, i, j)
-
+       # def __init__(self, **kwargs):
+           # setattr(self, "id", str(uuid4()))
+           # for i, j in kwargs.items():
+               # setattr(self, i, j)
 else:
-
     class Review(BaseModel):
         """This is the class for Review
         Attributes:
@@ -37,7 +33,6 @@ else:
             user_id: user id
             text: review description
         """
-
         place_id = ""
         user_id = ""
         text = ""
