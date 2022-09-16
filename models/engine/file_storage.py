@@ -9,7 +9,7 @@ from models.amenity import Amenity
 from models.review import Review
 import json
 
-classes = {'BaseModel': BaseModel, 'User': User, 'Place': Place,
+classes = {'BaseModel': BaseModel, 'User': User, 'Place': Place, 
            'State': State, 'City': City, 'Amenity': Amenity, 'Review': Review}
 
 
@@ -54,7 +54,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        """Deletes obj if not None"""
+        """Deletes obj if not None fron attribute __objects"""
         if obj is not None:
             obj_to_del = f"{type(obj).__name__}.{obj.id}"
             objcts = self.all(obj.__class__.__name__)
@@ -65,7 +65,5 @@ class FileStorage:
             return
 
     def close():
-        """
-        calls reload method(for deserialization)
-        """
+        """calls reload method for deserialization"""
         self.reload()
