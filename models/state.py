@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """This is the state class"""
-from models.base_model import Base, BaseModel, storage
+from models.base_model import Base, BaseModel
+from models.__init__ import storage
 from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship, backref
-from os
+import os
 
 SELECTED_STORAGE = os.environ.get("HBNB_TYPE_STORAGE")
 if SELECTED_STORAGE == "db":
