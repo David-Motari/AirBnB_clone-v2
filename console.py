@@ -11,7 +11,8 @@ from models.state import State
 from models.city import City
 from models.amenity import Amenity
 from models.review import Review
-from posixpath import split
+# from posixpath import split
+from shlex import split
 
 
 class HBNBCommand(cmd.Cmd):
@@ -113,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
                 key = kvp[0]
                 value = kvp[1]
                 if value[0] == value[-1] == '"':
-                    value = shlex.split(value)[0].replace('_', ' ')
+                    value = split(value)[0].replace('_', ' ')
                 else:
                     try:
                         value = int(value)
@@ -125,15 +126,15 @@ class HBNBCommand(cmd.Cmd):
                 new_dict[key] = value
                 return new_dict
 
-    def do_create(self, args):
+    def do_create(self, arg):
         """ Create an object of any class"""
         args = arg.split()
         if len(args) == 0:
             print("** class name missing **")
             return False
-        if args[0] in classes:
+        if args[0] in  HBNBCommand.classes:
             new_dic = self._key_value_parser(args[1:])
-            instance = classes[args[0]](**new_dic)
+            instance =  HBNBCommand.classes[args[0]](**new_dic)
         else:
             print("** class doesn't exist **")
             return False
