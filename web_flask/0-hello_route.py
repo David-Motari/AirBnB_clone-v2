@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+0-hello_route
+starts a Flask web application
+"""
 from flask import Flask
 import os
 app = Flask(__name__)
