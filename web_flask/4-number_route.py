@@ -46,9 +46,9 @@ def python(text='is_cool'):
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
     """
-    return number - n
+    if n is integer - returns 'n is a number'
     """
-    return '{} is a Number'.format(n)
+    return '{} is a number'.format(n)
 
 
 if __name__ == "__main__":
